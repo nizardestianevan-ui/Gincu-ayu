@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Rekomendasi - Explore Indramayu</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="bg-slate-950 overflow-x-hidden">
+    <header>
+      <nav
+        id="navbar"
+        class="fixed top-0 left-0 w-full z-50 bg-slate-950/90 backdrop-blur transition-all duration-300"
+      >
+        <div class="w-full flex items-center justify-between lg:px-5 py-4">
+          <a href="../Homepage.html" class="flex items-center gap-3">
+            <img
+              src="../Assets/Logo.png"
+              alt="Logo"
+              class="w-11 h-11 rounded-full object-cover border-2 border-amber-400"
+            />
+
+            <div>
+              <h1 class="text-white text-lg font-bold">
+                Explore
+                <span class="text-amber-400">Indramayu</span>
+              </h1>
+
+              <p class="text-xs text-green-200">Wisata • UMKM</p>
+            </div>
+          </a>
+
+          <ul class="hidden lg:flex items-center gap-8">
+            <li>
+              <a
+                href="../Homepage.html"
+                class="text-white hover:text-amber-400 transition"
+              >
+                Home
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="Rekomendasi.html"
+                class="text-amber-400 font-semibold transition"
+              >
+                Rekomendasi
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="Tersimpan.html"
+                class="text-white hover:text-amber-400 transition"
+              >
+                Tersimpan
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="Pengaturan.html"
+                class="text-white hover:text-amber-400 transition"
+              >
+                Pengaturan
+              </a>
+            </li>
+          </ul>
+
+          <button
+            id="menuBtn"
+            class="lg:hidden w-11 h-11 rounded-xl bg-green-600 hover:bg-green-700 text-white text-2xl transition"
+          >
+            ☰
+          </button>
+        </div>
+      </nav>
+
+      <div id="overlay" class="fixed inset-0 bg-black/50 hidden z-40"></div>
+
+      <aside
+        id="sidebar"
+        class="fixed top-0 right-0 w-72 h-screen bg-slate-900 translate-x-full z-50 shadow-2xl"
+      >
+        <div
+          class="flex items-center justify-between px-6 py-5 border-b border-slate-700"
+        >
+          <div class="flex items-center gap-3">
+            <img
+              src="../Assets/Logo.png"
+              alt="Logo"
+              class="w-10 h-10 rounded-full border-2 border-amber-400"
+            />
+
+            <div>
+              <h2 class="text-white font-bold">
+                Explore
+                <span class="text-amber-400">Indramayu</span>
+              </h2>
+
+              <p class="text-xs text-green-300">Wisata • UMKM</p>
+            </div>
+          </div>
+
+          <button
+            id="closeBtn"
+            class="text-white text-3xl hover:text-amber-400 transition"
+          >
+            ✕
+          </button>
+        </div>
+
+        <ul id="sidebarMenu" class="mt-6 px-4 space-y-2">
+          <li>
+            <a
+              href="../Homepage.html"
+              class="flex items-center gap-3 p-3 rounded-xl text-white hover:bg-green-600 hover:text-white transition-all duration-300"
+            >
+              🏠 Home
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="Rekomendasi.html"
+              class="flex items-center gap-3 p-3 rounded-xl bg-green-600 text-white transition-all duration-300"
+            >
+              ⭐ Rekomendasi
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="Tersimpan.html"
+              class="flex items-center gap-3 p-3 rounded-xl text-white hover:bg-green-600 hover:text-white transition-all duration-300"
+            >
+              ❤️ Tersimpan
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="Pengaturan.html"
+              class="flex items-center gap-3 p-3 rounded-xl text-white hover:bg-green-600 hover:text-white transition-all duration-300"
+            >
+              ⚙️ Pengaturan
+            </a>
+          </li>
+        </ul>
+      </aside>
+    </header>
+
+    <!-- ============ ISI HALAMAN REKOMENDASI ============ -->
+    <main class="relative pt-32 pb-20 px-6 min-h-screen">
+      <div
+        class="absolute inset-0 bg-gradient-to-br from-green-900 via-slate-950 to-slate-950 -z-10"
+      ></div>
+
+      <section class="text-center max-w-2xl mx-auto mb-12">
+        <span
+          class="inline-block text-xs tracking-[0.14em] uppercase text-amber-300 bg-amber-400/10 border border-amber-400/30 px-3.5 py-1.5 rounded-full mb-5"
+        >
+          Peta &amp; Rekomendasi
+        </span>
+
+        <h1 class="text-3xl md:text-5xl font-bold text-white">
+          Rekomendasi
+          <span class="text-amber-400">Tempat Wisata</span>
+        </h1>
+
+        <p class="mt-4 text-green-100 text-base md:text-lg">
+          Pilihan destinasi terbaik di Indramayu lengkap dengan lokasi peta,
+          supaya kamu tinggal klik dan langsung tahu arah menuju ke sana.
+        </p>
+      </section>
+
+      <div id="filterRow" class="flex flex-wrap justify-center gap-2.5 mb-12">
+        <button
+          data-filter="Semua"
+          class="filter-chip is-active text-sm font-semibold px-4 py-2 rounded-full bg-amber-500 text-white transition"
+        >
+          Semua
+        </button>
+        <button
+          data-filter="Pantai"
+          class="filter-chip text-sm font-medium px-4 py-2 rounded-full bg-slate-800 text-green-100 hover:bg-slate-700 transition"
+        >
+          Pantai
+        </button>
+        <button
+          data-filter="Mangrove"
+          class="filter-chip text-sm font-medium px-4 py-2 rounded-full bg-slate-800 text-green-100 hover:bg-slate-700 transition"
+        >
+          Hutan Mangrove
+        </button>
+        <button
+          data-filter="Religi"
+          class="filter-chip text-sm font-medium px-4 py-2 rounded-full bg-slate-800 text-green-100 hover:bg-slate-700 transition"
+        >
+          Wisata Religi
+        </button>
+        <button
+          data-filter="Agrowisata"
+          class="filter-chip text-sm font-medium px-4 py-2 rounded-full bg-slate-800 text-green-100 hover:bg-slate-700 transition"
+        >
+          Agrowisata
+        </button>
+      </div>
+
+      <div
+        id="placeGrid"
+        class="grid grid-cols-1 md:grid-cols-2 gap-7 max-w-5xl mx-auto"
+      >
+        <!-- 1 -->
+        <article
+          data-tag="Pantai"
+          class="place-card bg-slate-900/70 border border-slate-800 rounded-2xl overflow-hidden transition hover:-translate-y-1 hover:border-amber-400/40"
+        >
+          <iframe
+            class="w-full h-[210px] border-0 block"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=Pantai+Tirtamaya+Indramayu&output=embed"
+          ></iframe>
+          <div class="p-6">
+            <div class="flex items-start justify-between gap-3 mb-2">
+              <h3 class="font-bold text-lg text-white">Pantai Tirtamaya</h3>
+              <span
+                class="shrink-0 text-[11px] font-semibold px-2.5 py-1 rounded-full bg-amber-400/10 text-amber-300 border border-amber-400/25 whitespace-nowrap"
+                >Pantai</span
+              >
+            </div>
+            <div class="flex items-center gap-1.5 text-xs text-green-300 mb-3">
+              📍 Juntinyuat, Kabupaten Indramayu
+            </div>
+            <p class="text-sm leading-relaxed text-green-100/80 mb-4">
+              Pantai paling populer di Indramayu dengan garis pantai panjang,
+              gazebo untuk bersantai, dan panorama matahari terbit maupun
+              terbenam yang memikat.
+            </p>
+            <div class="flex items-center justify-between gap-3">
+              <div
+                class="text-sm font-semibold text-amber-300 flex items-center gap-1"
+              >
+                <span class="text-amber-400">★</span> 4.4
+              </div>
+              <a
+                class="inline-flex items-center gap-1.5 text-sm font-semibold text-white bg-green-600 hover:bg-green-700 px-4 py-2 rounded-lg transition"
+                href="https://www.google.com/maps?q=Pantai+Tirtamaya+Indramayu"
+                target="_blank"
+                rel="noopener"
+                >Buka di Maps →</a
+              >
+            </div>
+          </div>
+        </article>
+
+        <!-- 2 -->
+        <article
+          data-tag="Mangrove"
+          class="place-card bg-slate-900/70 border border-slate-800 rounded-2xl overflow-hidden transition hover:-translate-y-1 hover:border-amber-400/40"
+        >
+          <iframe
+            class="w-full h-[210px] border-0 block"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=Hutan+Mangrove+Karangsong+Indramayu&output=embed"
+          ></iframe>
+          <div class="p-6">
+            <div class="flex items-start justify-between gap-3 mb-2">
+              <h3 class="font-bold text-lg text-white">
+                Hutan Mangrove Karangsong
+              </h3>
+              <span
+                class="shrink-0 text-[11px] font-semibold px-2.5 py-1 rounded-full bg-amber-400/10 text-amber-300 border border-amber-400/25 whitespace-nowrap"
+                >Mangrove</span
+              >
+            </div>
+            <div class="flex items-center gap-1.5 text-xs text-green-300 mb-3">
+              📍 Karangsong, Kabupaten Indramayu
+            </div>
+            <p class="text-sm leading-relaxed text-green-100/80 mb-4">
+              Kawasan mangrove seluas sekitar 25 hektare dengan jembatan kayu
+              panjang membelah hutan — spot favorit untuk foto dan wisata
+              edukasi lingkungan.
+            </p>
+            <div class="flex items-center justify-between gap-3">
+              <div
+                class="text-sm font-semibold text-amber-300 flex items-center gap-1"
+              >
+                <span class="text-amber-400">★</span> 4.5
+              </div>
+              <a
+                class="inline-flex items-center gap-1.5 text-sm font-semibold text-white bg-green-600 hover:bg-green-700 px-4 py-2 rounded-lg transition"
+                href="https://www.google.com/maps?q=Hutan+Mangrove+Karangsong+Indramayu"
+                target="_blank"
+                rel="noopener"
+                >Buka di Maps →</a
+              >
+            </div>
+          </div>
+        </article>
+
+        <!-- 3 -->
+        <article
+          data-tag="Pantai"
+          class="place-card bg-slate-900/70 border border-slate-800 rounded-2xl overflow-hidden transition hover:-translate-y-1 hover:border-amber-400/40"
+        >
+          <iframe
+            class="w-full h-[210px] border-0 block"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=Pantai+Balongan+Indah+Indramayu&output=embed"
+          ></iframe>
+          <div class="p-6">
+            <div class="flex items-start justify-between gap-3 mb-2">
+              <h3 class="font-bold text-lg text-white">
+                Pantai Balongan Indah
+              </h3>
+              <span
+                class="shrink-0 text-[11px] font-semibold px-2.5 py-1 rounded-full bg-amber-400/10 text-amber-300 border border-amber-400/25 whitespace-nowrap"
+                >Pantai</span
+              >
+            </div>
+            <div class="flex items-center gap-1.5 text-xs text-green-300 mb-3">
+              📍 Kecamatan Balongan, Kabupaten Indramayu
+            </div>
+            <p class="text-sm leading-relaxed text-green-100/80 mb-4">
+              Dijuluki "Bali-nya Indramayu" karena nuansa tropisnya. Pantai hits
+              dengan berbagai wahana permainan, cocok untuk liburan keluarga.
+            </p>
+            <div class="flex items-center justify-between gap-3">
+              <div
+                class="text-sm font-semibold text-amber-300 flex items-center gap-1"
+              >
+                <span class="text-amber-400">★</span> 4.3
+              </div>
+              <a
+                class="inline-flex items-center gap-1.5 text-sm font-semibold text-white bg-green-600 hover:bg-green-700 px-4 py-2 rounded-lg transition"
+                href="https://www.google.com/maps?q=Pantai+Balongan+Indah+Indramayu"
+                target="_blank"
+                rel="noopener"
+                >Buka di Maps →</a
+              >
+            </div>
+          </div>
+        </article>
+
+        <!-- 4 -->
+        <article
+          data-tag="Agrowisata"
+          class="place-card bg-slate-900/70 border border-slate-800 rounded-2xl overflow-hidden transition hover:-translate-y-1 hover:border-amber-400/40"
+        >
+          <iframe
+            class="w-full h-[210px] border-0 block"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=Situ+Bolang+Indramayu&output=embed"
+          ></iframe>
+          <div class="p-6">
+            <div class="flex items-start justify-between gap-3 mb-2">
+              <h3 class="font-bold text-lg text-white">Situ Bolang</h3>
+              <span
+                class="shrink-0 text-[11px] font-semibold px-2.5 py-1 rounded-full bg-amber-400/10 text-amber-300 border border-amber-400/25 whitespace-nowrap"
+                >Agrowisata</span
+              >
+            </div>
+            <div class="flex items-center gap-1.5 text-xs text-green-300 mb-3">
+              📍 Kabupaten Indramayu
+            </div>
+            <p class="text-sm leading-relaxed text-green-100/80 mb-4">
+              Bekas area pertanian yang disulap menjadi agrowisata dengan sawah,
+              ladang buah, dan embung alami — tempat healing sekaligus lokasi
+              foto prewedding.
+            </p>
+            <div class="flex items-center justify-between gap-3">
+              <div
+                class="text-sm font-semibold text-amber-300 flex items-center gap-1"
+              >
+                <span class="text-amber-400">★</span> 4.2
+              </div>
+              <a
+                class="inline-flex items-center gap-1.5 text-sm font-semibold text-white bg-green-600 hover:bg-green-700 px-4 py-2 rounded-lg transition"
+                href="https://www.google.com/maps?q=Situ+Bolang+Indramayu"
+                target="_blank"
+                rel="noopener"
+                >Buka di Maps →</a
+              >
+            </div>
+          </div>
+        </article>
+
+        <!-- 5 -->
+        <article
+          data-tag="Religi"
+          class="place-card bg-slate-900/70 border border-slate-800 rounded-2xl overflow-hidden transition hover:-translate-y-1 hover:border-amber-400/40"
+        >
+          <iframe
+            class="w-full h-[210px] border-0 block"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=Masjid+Agung+Baiturrahman+Indramayu&output=embed"
+          ></iframe>
+          <div class="p-6">
+            <div class="flex items-start justify-between gap-3 mb-2">
+              <h3 class="font-bold text-lg text-white">
+                Masjid Agung Baiturrahman
+              </h3>
+              <span
+                class="shrink-0 text-[11px] font-semibold px-2.5 py-1 rounded-full bg-amber-400/10 text-amber-300 border border-amber-400/25 whitespace-nowrap"
+                >Religi</span
+              >
+            </div>
+            <div class="flex items-center gap-1.5 text-xs text-green-300 mb-3">
+              📍 Margadadi, Kecamatan Indramayu
+            </div>
+            <p class="text-sm leading-relaxed text-green-100/80 mb-4">
+              Masjid terbesar dan termegah di Indramayu, menjadi kebanggaan
+              warga sekaligus pusat wisata religi yang ramai dikunjungi setiap
+              harinya.
+            </p>
+            <div class="flex items-center justify-between gap-3">
+              <div
+                class="text-sm font-semibold text-amber-300 flex items-center gap-1"
+              >
+                <span class="text-amber-400">★</span> 4.7
+              </div>
+              <a
+                class="inline-flex items-center gap-1.5 text-sm font-semibold text-white bg-green-600 hover:bg-green-700 px-4 py-2 rounded-lg transition"
+                href="https://www.google.com/maps?q=Masjid+Agung+Baiturrahman+Indramayu"
+                target="_blank"
+                rel="noopener"
+                >Buka di Maps →</a
+              >
+            </div>
+          </div>
+        </article>
+
+        <!-- 6 -->
+        <article
+          data-tag="Pantai"
+          class="place-card bg-slate-900/70 border border-slate-800 rounded-2xl overflow-hidden transition hover:-translate-y-1 hover:border-amber-400/40"
+        >
+          <iframe
+            class="w-full h-[210px] border-0 block"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=Pantai+Kepuh+Patrol+Indramayu&output=embed"
+          ></iframe>
+          <div class="p-6">
+            <div class="flex items-start justify-between gap-3 mb-2">
+              <h3 class="font-bold text-lg text-white">Pantai Kepuh</h3>
+              <span
+                class="shrink-0 text-[11px] font-semibold px-2.5 py-1 rounded-full bg-amber-400/10 text-amber-300 border border-amber-400/25 whitespace-nowrap"
+                >Pantai</span
+              >
+            </div>
+            <div class="flex items-center gap-1.5 text-xs text-green-300 mb-3">
+              📍 Kecamatan Patrol, Kabupaten Indramayu
+            </div>
+            <p class="text-sm leading-relaxed text-green-100/80 mb-4">
+              Digemari kalangan muda berkat tebing unik di area pesisirnya,
+              dipadukan dengan pemandangan perkebunan di sekitar pantai.
+            </p>
+            <div class="flex items-center justify-between gap-3">
+              <div
+                class="text-sm font-semibold text-amber-300 flex items-center gap-1"
+              >
+                <span class="text-amber-400">★</span> 4.1
+              </div>
+              <a
+                class="inline-flex items-center gap-1.5 text-sm font-semibold text-white bg-green-600 hover:bg-green-700 px-4 py-2 rounded-lg transition"
+                href="https://www.google.com/maps?q=Pantai+Kepuh+Patrol+Indramayu"
+                target="_blank"
+                rel="noopener"
+                >Buka di Maps →</a
+              >
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <p class="text-center text-green-300/70 text-xs mt-10">
+        Peta ditampilkan langsung dari Google Maps — klik "Buka di Maps" untuk
+        melihat rute perjalanan.
+      </p>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+
+    <script src="../Javascript/main.js"></script>
+    <script src="../Javascript/rekomendasi.js"></script>
+  </body>
+</html>
