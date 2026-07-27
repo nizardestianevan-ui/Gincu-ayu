@@ -101,3 +101,32 @@ menuLinks.forEach(link => {
         );
     }
 });
+document.addEventListener("DOMContentLoaded", () => {
+  const chips = document.querySelectorAll(".filter-chip");
+  const cards = document.querySelectorAll(".place-card");
+ 
+  const activeClasses = ["bg-amber-500", "text-white"];
+  const inactiveClasses = ["bg-slate-800", "text-green-100"];
+ 
+  chips.forEach((chip) => {
+    chip.addEventListener("click", () => {
+      // reset semua chip ke kondisi tidak aktif
+      chips.forEach((c) => {
+        c.classList.remove(...activeClasses, "is-active");
+        c.classList.add(...inactiveClasses);
+      });
+ 
+      // set chip yang diklik jadi aktif
+      chip.classList.remove(...inactiveClasses);
+      chip.classList.add(...activeClasses, "is-active");
+ 
+      const filter = chip.dataset.filter;
+ 
+      cards.forEach((card) => {
+        const tag = card.dataset.tag;
+        const match = filter === "Semua" || tag === filter;
+        card.style.display = match ? "" : "none";
+      });
+    });
+  });
+});
