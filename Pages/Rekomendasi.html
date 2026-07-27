@@ -56,7 +56,7 @@
                 href="Rekomendasi.html"
                 class="text-amber-400 font-semibold transition"
               >
-                Rekomendasi
+                Explore
               </a>
             </li>
 
@@ -65,16 +65,7 @@
                 href="Tersimpan.html"
                 class="text-white hover:text-amber-400 transition"
               >
-                Tersimpan
-              </a>
-            </li>
-
-            <li>
-              <a
-                href="Pengaturan.html"
-                class="text-white hover:text-amber-400 transition"
-              >
-                Pengaturan
+                Favorite
               </a>
             </li>
           </ul>
@@ -137,7 +128,7 @@
               href="Rekomendasi.html"
               class="flex items-center gap-3 p-3 rounded-xl bg-green-600 text-white transition-all duration-300"
             >
-              ⭐ Rekomendasi
+              ⭐ Explore
             </a>
           </li>
 
@@ -146,16 +137,7 @@
               href="Tersimpan.html"
               class="flex items-center gap-3 p-3 rounded-xl text-white hover:bg-green-600 hover:text-white transition-all duration-300"
             >
-              ❤️ Tersimpan
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="Pengaturan.html"
-              class="flex items-center gap-3 p-3 rounded-xl text-white hover:bg-green-600 hover:text-white transition-all duration-300"
-            >
-              ⚙️ Pengaturan
+              ❤️ Favorite
             </a>
           </li>
         </ul>
@@ -533,10 +515,25 @@
               <h3 class="font-bold text-lg text-white">
                 Pantai Balongan Indah
               </h3>
-              <span
-                class="shrink-0 text-[11px] font-semibold px-2.5 py-1 rounded-full bg-amber-400/10 text-amber-300 border border-amber-400/25 whitespace-nowrap"
-                >Pantai</span
-              >
+              <div class="flex items-center gap-2 shrink-0">
+                <span
+                  class="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-amber-400/10 text-amber-300 border border-amber-400/25 whitespace-nowrap"
+                  >Pantai</span
+                >
+                <button
+                  class="save-btn w-8 h-8 rounded-full bg-white/10 hover:bg-amber-500 text-white text-base flex items-center justify-center transition"
+                  data-id="balongan-indah"
+                  data-name="Pantai Balongan Indah"
+                  data-tag="Pantai"
+                  data-loc="Kecamatan Balongan, Kabupaten Indramayu"
+                  data-desc='Dijuluki "Bali-nya Indramayu" karena nuansa tropisnya. Pantai hits dengan berbagai wahana permainan, cocok untuk liburan keluarga.'
+                  data-rating="4.3"
+                  data-query="Pantai+Balongan+Indah+Indramayu"
+                  aria-label="Simpan Pantai Balongan Indah"
+                >
+                  ♡
+                </button>
+              </div>
             </div>
             <div class="flex items-center gap-1.5 text-xs text-green-300 mb-3">
               📍 Kecamatan Balongan, Kabupaten Indramayu
@@ -575,10 +572,25 @@
           <div class="p-6">
             <div class="flex items-start justify-between gap-3 mb-2">
               <h3 class="font-bold text-lg text-white">Pantai Kepuh</h3>
-              <span
-                class="shrink-0 text-[11px] font-semibold px-2.5 py-1 rounded-full bg-amber-400/10 text-amber-300 border border-amber-400/25 whitespace-nowrap"
-                >Pantai</span
-              >
+              <div class="flex items-center gap-2 shrink-0">
+                <span
+                  class="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-amber-400/10 text-amber-300 border border-amber-400/25 whitespace-nowrap"
+                  >Agrowisata</span
+                >
+                <button
+                  class="save-btn w-8 h-8 rounded-full bg-white/10 hover:bg-amber-500 text-white text-base flex items-center justify-center transition"
+                  data-id="situ-bolang"
+                  data-name="Situ Bolang"
+                  data-tag="Agrowisata"
+                  data-loc="Kabupaten Indramayu"
+                  data-desc="Bekas area pertanian yang disulap menjadi agrowisata dengan sawah, ladang buah, dan embung alami — tempat healing sekaligus lokasi foto prewedding."
+                  data-rating="4.2"
+                  data-query="Situ+Bolang+Indramayu"
+                  aria-label="Simpan Situ Bolang"
+                >
+                  ♡
+                </button>
+              </div>
             </div>
             <div class="flex items-center gap-1.5 text-xs text-green-300 mb-3">
               📍 Kecamatan Patrol, Kabupaten Indramayu
@@ -614,6 +626,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
 
     <script src="../Javascript/main.js"></script>
-    <script src="../Javascript/rekomendasi.js"></script>
+    <script src="../Javascript/simpan.js"></script>
   </body>
 </html>

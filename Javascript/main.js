@@ -102,7 +102,7 @@ menuLinks.forEach(link => {
     }
 });
 document.addEventListener("DOMContentLoaded", () => {
-  const chips = dsocument.querySelectorAll(".filter-chip");
+  const chips = document.querySelectorAll(".filter-chip");
   const cards = document.querySelectorAll(".place-card");
  
   const activeClasses = ["bg-amber-500", "text-white"];
