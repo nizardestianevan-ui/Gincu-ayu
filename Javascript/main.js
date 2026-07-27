@@ -139,6 +139,8 @@ document.addEventListener("DOMContentLoaded", () => {
  
   let currentIndex = 0;
   const totalSlides = slides.length;
+  const AUTO_DELAY = 5000; // 5 detik
+  let autoTimer = null;
  
   function goToSlide(index) {
     // pastikan index selalu dalam batas 0 - (totalSlides - 1)
@@ -151,6 +153,17 @@ document.addEventListener("DOMContentLoaded", () => {
     track.style.transform = `translateX(-${currentIndex * 100}%)`;
  
     updateDots();
+  }
+ 
+  function startAutoSlide() {
+    autoTimer = setInterval(() => {
+      goToSlide(currentIndex + 1);
+    }, AUTO_DELAY);
+  }
+ 
+  function resetAutoSlide() {
+    clearInterval(autoTimer);
+    startAutoSlide();
   }
  
   function updateDots() {
@@ -166,22 +179,35 @@ document.addEventListener("DOMContentLoaded", () => {
   }
  
   // tombol kanan -> slide berikutnya
-  nextBtn.addEventListener("click", () => goToSlide(currentIndex + 1));
+  nextBtn.addEventListener("click", () => {
+    goToSlide(currentIndex + 1);
+    resetAutoSlide();
+  });
  
   // tombol kiri -> slide sebelumnya
-  prevBtn.addEventListener("click", () => goToSlide(currentIndex - 1));
+  prevBtn.addEventListener("click", () => {
+    goToSlide(currentIndex - 1);
+    resetAutoSlide();
+  });
  
   // klik langsung ke titik indikator
   dots.forEach((dot) => {
     dot.addEventListener("click", () => {
       goToSlide(parseInt(dot.dataset.index, 10));
+      resetAutoSlide();
     });
   });
  
   // navigasi pakai tombol keyboard kiri/kanan
   document.addEventListener("keydown", (e) => {
-    if (e.key === "ArrowRight") goToSlide(currentIndex + 1);
-    if (e.key === "ArrowLeft") goToSlide(currentIndex - 1);
+    if (e.key === "ArrowRight") {
+      goToSlide(currentIndex + 1);
+      resetAutoSlide();
+    }
+    if (e.key === "ArrowLeft") {
+      goToSlide(currentIndex - 1);
+      resetAutoSlide();
+    }
   });
  
   // dukungan geser (swipe) di layar sentuh
@@ -195,13 +221,23 @@ document.addEventListener("DOMContentLoaded", () => {
     const touchEndX = e.changedTouches[0].clientX;
     const diff = touchStartX - touchEndX;
  
-    if (diff > 50) goToSlide(currentIndex + 1); // geser ke kiri -> slide berikutnya
-    if (diff < -50) goToSlide(currentIndex - 1); // geser ke kanan -> slide sebelumnya
+    if (diff > 50) {
+      goToSlide(currentIndex + 1); // geser ke kiri -> slide berikutnya
+      resetAutoSlide();
+    }
+    if (diff < -50) {
+      goToSlide(currentIndex - 1); // geser ke kanan -> slide sebelumnya
+      resetAutoSlide();
+    }
   });
  
-  // inisialisasi tampilan awal
+  // inisialisasi tampilan awal + mulai auto-slide
   goToSlide(0);
+  startAutoSlide();
 });
+ 
+
+
 const filterButtons = document.querySelectorAll(".filter-chip");
 const placeCards = document.querySelectorAll(".place-card");
 
