@@ -220,7 +220,7 @@
           <!-- Slide 2 -->
           <section class="slide relative shrink-0 w-full h-full">
             <img
-              src="../Assets/Gallery/pantai-indramayu.jpg"
+              src="../Assets/pantai.jpeg"
               alt="Pesona Pantai Indramayu"
               class="absolute inset-0 w-full h-full object-cover"
             />
@@ -369,7 +369,10 @@
         </div>
       </main>
 
-      <div id="filterRow" class="flex flex-wrap justify-center gap-2.5 mb-12">
+      <div
+        id="filterRow"
+        class="flex flex-wrap justify-center gap-2.5 mb-12 mt-10"
+      >
         <button
           data-filter="Semua"
           class="filter-chip is-active text-sm font-semibold px-4 py-2 rounded-full bg-amber-500 text-white transition"
@@ -408,10 +411,25 @@
           <div class="p-6">
             <div class="flex items-start justify-between gap-3 mb-2">
               <h3 class="font-bold text-lg text-white">Pantai Tirtamaya</h3>
-              <span
-                class="shrink-0 text-[11px] font-semibold px-2.5 py-1 rounded-full bg-amber-400/10 text-amber-300 border border-amber-400/25 whitespace-nowrap"
-                >Pantai</span
-              >
+              <div class="flex items-center gap-2 shrink-0">
+                <span
+                  class="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-amber-400/10 text-amber-300 border border-amber-400/25 whitespace-nowrap"
+                  >Pantai</span
+                >
+                <button
+                  class="save-btn w-8 h-8 rounded-full bg-white/10 hover:bg-amber-500 text-white text-base flex items-center justify-center transition"
+                  data-id="tirtamaya"
+                  data-name="Pantai Tirtamaya"
+                  data-tag="Pantai"
+                  data-loc="Juntinyuat, Kabupaten Indramayu"
+                  data-desc="Pantai paling populer di Indramayu dengan garis pantai panjang, gazebo untuk bersantai, dan panorama matahari terbit maupun terbenam yang memikat."
+                  data-rating="4.4"
+                  data-query="Pantai+Tirtamaya+Indramayu"
+                  aria-label="Simpan Pantai Tirtamaya"
+                >
+                  ♡
+                </button>
+              </div>
             </div>
             <div class="flex items-center gap-1.5 text-xs text-green-300 mb-3">
               📍 Juntinyuat, Kabupaten Indramayu
@@ -454,10 +472,25 @@
               <h3 class="font-bold text-lg text-white">
                 Hutan Mangrove Karangsong
               </h3>
-              <span
-                class="shrink-0 text-[11px] font-semibold px-2.5 py-1 rounded-full bg-amber-400/10 text-amber-300 border border-amber-400/25 whitespace-nowrap"
-                >Mangrove</span
-              >
+              <div class="flex items-center gap-2 shrink-0">
+                <span
+                  class="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-amber-400/10 text-amber-300 border border-amber-400/25 whitespace-nowrap"
+                  >Mangrove</span
+                >
+                <button
+                  class="save-btn w-8 h-8 rounded-full bg-white/10 hover:bg-amber-500 text-white text-base flex items-center justify-center transition"
+                  data-id="mangrove-karangsong"
+                  data-name="Hutan Mangrove Karangsong"
+                  data-tag="Mangrove"
+                  data-loc="Karangsong, Kabupaten Indramayu"
+                  data-desc="Kawasan mangrove seluas sekitar 25 hektare dengan jembatan kayu panjang membelah hutan — spot favorit untuk foto dan wisata edukasi lingkungan."
+                  data-rating="4.5"
+                  data-query="Hutan+Mangrove+Karangsong+Indramayu"
+                  aria-label="Simpan Hutan Mangrove Karangsong"
+                >
+                  ♡
+                </button>
+              </div>
             </div>
             <div class="flex items-center gap-1.5 text-xs text-green-300 mb-3">
               📍 Karangsong, Kabupaten Indramayu
