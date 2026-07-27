@@ -102,7 +102,7 @@ menuLinks.forEach(link => {
     }
 });
 document.addEventListener("DOMContentLoaded", () => {
-  const chips = document.querySelectorAll(".filter-chip");
+  const chips = dsocument.querySelectorAll(".filter-chip");
   const cards = document.querySelectorAll(".place-card");
  
   const activeClasses = ["bg-amber-500", "text-white"];
@@ -129,4 +129,118 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   });
+});
+document.addEventListener("DOMContentLoaded", () => {
+  const track = document.getElementById("sliderTrack");
+  const slides = document.querySelectorAll(".slide");
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
+  const dots = document.querySelectorAll(".dot");
+ 
+  let currentIndex = 0;
+  const totalSlides = slides.length;
+ 
+  function goToSlide(index) {
+    // pastikan index selalu dalam batas 0 - (totalSlides - 1)
+    if (index < 0) index = totalSlides - 1;
+    if (index >= totalSlides) index = 0;
+ 
+    currentIndex = index;
+ 
+    // geser track ke kiri/kanan sesuai index slide aktif
+    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+ 
+    updateDots();
+  }
+ 
+  function updateDots() {
+    dots.forEach((dot, i) => {
+      if (i === currentIndex) {
+        dot.classList.remove("bg-white/40");
+        dot.classList.add("bg-amber-400");
+      } else {
+        dot.classList.remove("bg-amber-400");
+        dot.classList.add("bg-white/40");
+      }
+    });
+  }
+ 
+  // tombol kanan -> slide berikutnya
+  nextBtn.addEventListener("click", () => goToSlide(currentIndex + 1));
+ 
+  // tombol kiri -> slide sebelumnya
+  prevBtn.addEventListener("click", () => goToSlide(currentIndex - 1));
+ 
+  // klik langsung ke titik indikator
+  dots.forEach((dot) => {
+    dot.addEventListener("click", () => {
+      goToSlide(parseInt(dot.dataset.index, 10));
+    });
+  });
+ 
+  // navigasi pakai tombol keyboard kiri/kanan
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowRight") goToSlide(currentIndex + 1);
+    if (e.key === "ArrowLeft") goToSlide(currentIndex - 1);
+  });
+ 
+  // dukungan geser (swipe) di layar sentuh
+  let touchStartX = 0;
+ 
+  track.addEventListener("touchstart", (e) => {
+    touchStartX = e.touches[0].clientX;
+  });
+ 
+  track.addEventListener("touchend", (e) => {
+    const touchEndX = e.changedTouches[0].clientX;
+    const diff = touchStartX - touchEndX;
+ 
+    if (diff > 50) goToSlide(currentIndex + 1); // geser ke kiri -> slide berikutnya
+    if (diff < -50) goToSlide(currentIndex - 1); // geser ke kanan -> slide sebelumnya
+  });
+ 
+  // inisialisasi tampilan awal
+  goToSlide(0);
+});
+const filterButtons = document.querySelectorAll(".filter-chip");
+const placeCards = document.querySelectorAll(".place-card");
+
+filterButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        filterButtons.forEach(btn => {
+            btn.classList.remove("bg-amber-500", "text-white", "font-semibold");
+
+            btn.classList.add("bg-slate-800", "text-green-100");
+        });
+
+        button.classList.remove("bg-slate-800", "text-green-100");
+
+        button.classList.add("bg-amber-500", "text-white", "font-semibold");
+
+        const filter = button.dataset.filter;
+
+        placeCards.forEach(card => {
+            if (filter === "Semua" || card.dataset.tag === filter) {
+                card.classList.remove("hidden");
+
+                gsap.fromTo(
+                    card,
+                    {
+                        opacity: 0,
+                        y: 30,
+                        scale: 0.95
+                    },
+                    {
+                        opacity: 1,
+                        y: 0,
+                        scale: 1,
+                        duration: 0.5,
+                        ease: "power2.out"
+                    }
+                );
+            } else {
+                card.classList.add("hidden");
+            }
+        });
+    });
 });
