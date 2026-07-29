@@ -1,7 +1,3 @@
-// Javascript/simpan.js
-// Fitur simpan tempat dari halaman Rekomendasi, lalu ditampilkan di halaman Tersimpan.
-// Data disimpan di localStorage (browser) dengan key "savedPlaces".
-// Terpisah dari main.js dan rekomendasi.js supaya tidak menimpa logika lain.
 
 const STORAGE_KEY = "savedPlaces";
 
@@ -52,6 +48,7 @@ function initSaveButtons() {
         desc: btn.dataset.desc,
         rating: btn.dataset.rating,
         query: btn.dataset.query,
+        image: btn.dataset.image,
       };
 
       if (isSaved(place.id)) {
@@ -97,12 +94,11 @@ function renderSavedGrid() {
     .map(
       (p) => `
     <article class="place-card bg-slate-900/70 border border-slate-800 rounded-2xl overflow-hidden transition hover:-translate-y-1 hover:border-amber-400/40">
-      <iframe
-        class="w-full h-[210px] border-0 block"
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-        src="https://www.google.com/maps?q=${p.query}&output=embed"
-      ></iframe>
+      <img
+        src="${p.image}"
+        alt="${p.name}"
+        class="w-full h-[210px] object-cover"
+      />
       <div class="p-6">
         <div class="flex items-start justify-between gap-3 mb-2">
           <h3 class="font-bold text-lg text-white">${p.name}</h3>
